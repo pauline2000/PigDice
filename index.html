@@ -1,48 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/styles.css">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="js/scripts.js"></script>
+  <title>pig dice</title>
 </head>
+
 <body>
-    <div class="row">
-        
-        <form id="players">
-            <div class="col-md-6">
-            <div class="form-group">
-                    <label for="username">Player 1:</label>
-                    <input type="text" class="form-control" id="player1" placeholder="player name" name="player name">
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-group">
-                        <label for="username">Player 2:
-                        <input type="text" class="form-control" id="player1" placeholder="player name" name="player name"></label>
-                      </div>
-                    </div>
-                    </form>
-        <div class="col-md-6" style="text-align:center;">
-            <h1 class="player1">Player 1</h1>
-          <button type="submit" class="btn-play btn-lg">Play</button>
-          <button type="submit" class="btn-hold btn-lg">Hold</button><br>
-          <label for="Turn Score">Turn Score:</label><br>
-          <label for="Turn Total">Turn Total:</label><br>
-          <label for="Total Score">Total Score:</label><br>
+  <h3 style="color:black;"> Rules:</h3>
+  <ul>
+    <li style="color:black;">If the player rolls a 1, they score nothing and it becomes the next player's turn.</li>
+    <li style="color:black;">If the player rolls any other number, it is added to their  total  and the player's turn continues</li>
+    <li style="color:black;">If a player chooses to "hold", their  total score is added to their score, and it becomes the next player's turn.</li>
+  </ul>
+  <div class="row">
+
+    <form id="players">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="player1">Player 1:</label>
+          <input type="text" class="form-control" id="player1" placeholder="Enter Player Name">
         </div>
-        <div class="col-md-6"style="text-align:left;" >
-            <h1 class="player2">Player 2</h1>
-            <button type="submit" class="btn-play btn-lg"> Play</button>
-            <button type="submit" class="btn-hold btn-lg">Hold</button><br>
-            <label for="Turn Score">Turn Score:</label><br>
-          <label for="Turn Total">Turn Total:</label><br>
-          <label for="Total Score">Total Score:</label><br>
-                    </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="player2">Player 2:</label>
+          <input type="text" class="form-control" id="player2" placeholder="Enter Player Name">
+        </div>
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn-danger btn-lg">Start playing</button>
+      </div>
+    </form>
+
+    <div class="col-md-6" style="text-align:center;">
+
+      <h1 class="player1">Player 1: <span class="players1Name"></span></h1>
+      <form>
+        <div class="form-group">
+          <span class="btn-danger btn-lg" id="btn-play1">Play</span>
+          <span   class="btn-danger btn-lg" id="btn-hold1">Hold</span><br>
+        </div>
+      </form>
+      <h3>Dice roll: <span class="player1-dice"></span></h3><br>
+      <h3> Total Score: <span class="player1-total"></span></h3><br>
+      <h3>Overall Score: <span class="player1-overall"></span></h3><br>
     </div>
-    <script src="js/jquery.js"></script>
-    <script src="js/scripts.js"></script>
+
+    <div class="col-md-6" style="text-align:left;">
+      <h1 class="player2">Player 2: <span class="players2Name"></span></h1>
+      <form>
+        <div class="form-group">
+          <span class="btn-danger btn-lg" id="btn-play2"> Play</span>
+          <span class="btn-danger btn-lg" id="btn-hold2">Hold</span><br>
+        </div>
+      </form>
+
+      <h3>Dice roll: <span class="player2-dice"></span></h3><br>
+      <h3> Total Score: <span class="player2-total"></span></h3><br>
+      <h3>Overall Score: <span class="player2-overall"></span></h3><br>
+    </div>
+  </div>
 </body>
+
 </html>

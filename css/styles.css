@@ -12,4 +12,8 @@
     text-align: left;
     margin-bottom: 5%;
 }
-    
+
+.btn-play{
+  background-color: red;
+  color: white;
+}
